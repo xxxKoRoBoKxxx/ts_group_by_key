@@ -7,7 +7,7 @@ export function groupByKey<T extends object>(
   const groupedMap: GroupsMap<T> = {};
 
   for (const item of items) {
-    const mapKey = item[key] as keyof GroupsMap<T>;
+    const mapKey = String(item[key]);
 
     if (!Array.isArray(groupedMap[mapKey])) {
       groupedMap[mapKey] = [];
